@@ -1,0 +1,19 @@
+<section class="header"></section>
+
+<div class="container"  infiniteScroll  [infiniteScrollDistance]="1" [infiniteScrollThrottle]="10" (scrolled)="onScroll()"  style="height: 100%">
+
+<div *ngFor="let film of films" class="col-md-8 col-md-offset-2" >
+  <div class="card swing-in-top-fwd scale-in-ver-center">
+    <h1>
+      <b>{{film.title}}</b>
+      <p class="date">&nbsp;({{film.release_date}})</p>
+    </h1>
+    <b>Directed By: </b><span>{{film.director}}</span>&nbsp;
+    <b>Produced By: </b><span>{{film.director}}</span>
+    <p class="desc">{{film.description}}</p>
+  </div>
+  <div class="clearfix"></div>
+</div>
+</div>
+
+
