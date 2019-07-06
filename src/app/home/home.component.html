@@ -1,15 +1,29 @@
-<section class="header"></section>
+<div class="text-center">
+  <h1 class="heading">Popular Films</h1>
+  <input placeholder="search" class="search-bar" type = "text" #myInput [(ngModel)] = "searchKeyword" (input) = "search()"/>
+</div>
 
+<section class="header"></section>
+<div class="text-center m-top10">
+  <span class="sort-by">Sort By:</span>
+  <button class="btn sort-btn" [ngClass]="{ 'active': orderedBy ==='release_date'}" (click)="sortBy('release_date')">Year</button>
+  <button class="sort-btn btn" [ngClass]="{ 'active': orderedBy ==='rt_score'}" (click)="sortBy('rt_score')">Rating</button>
+</div>
 <div class="container"  infiniteScroll  [infiniteScrollDistance]="1" [infiniteScrollThrottle]="10" (scrolled)="onScroll()"  style="height: 100%">
 
-<div *ngFor="let film of films" class="col-md-8 col-md-offset-2" >
+
+  <div *ngFor="let film of films" class="col-md-8 col-md-offset-2" >
   <div class="card swing-in-top-fwd scale-in-ver-center">
     <h1>
-      <b>{{film.title}}</b>
+      <b>{{film.title}}</b>&nbsp;&nbsp;
+      <span class="rating">
+        <span>{{film.rt_score/10}}</span><img class="star" src="assets/star.png">
+      </span>
       <p class="date">&nbsp;({{film.release_date}})</p>
     </h1>
     <b>Directed By: </b><span>{{film.director}}</span>&nbsp;
-    <b>Produced By: </b><span>{{film.director}}</span>
+    <b>Produced By: </b><span>{{film.producer}}</span>
+
     <p class="desc">{{film.description}}</p>
   </div>
   <div class="clearfix"></div>

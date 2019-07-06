@@ -1,3 +1,9 @@
+.heading{
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: cursive;
+}
 .card{
   background-color: #fff;
   border-radius: 10px;
@@ -13,6 +19,7 @@
   height: 250px;
   position: fixed;
   top: -40px;
+  z-index: -1;
 }
 .date{
   font-size: 18px;
@@ -22,6 +29,51 @@
   transform: scale(1.2);
 }
 .desc{
+  margin-top: 10px;
+}
+
+.search-bar{
+  position: relative; z-index: 9999;
+  margin: 0 auto;
+  width: 340px;
+  height: 50px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  font-size: 28px;
+  text-align: center;
+}
+.sort-by{
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.sort-btn{
+  padding: 2px 15px;
+  margin: 5px 10px;
+  border-radius: 50px;
+  outline: none;
+}
+*:focus {
+  outline: none !important;
+}
+.active{
+  background: #333;
+  color: #fff;
+}
+.rating{
+  font-size: 20px;
+}
+.star{
+  background: #f6404c;
+  border-radius: 50%;
+  width: 22px;
+  margin: 5px;
+}
+.m-top10{
   margin-top: 10px;
 }
 .scale-in-ver-center {
